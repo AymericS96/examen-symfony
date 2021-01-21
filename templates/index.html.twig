@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Accueil {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    {% for ville in villes %}
+
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ville.image}}" alt={{ville.name}} width="500">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ville.name}}</h5>
+                        <p class="card-text"> 
+                            CP {{ville.postalCode}} <br/>
+                            Population: {{ville.population}}
+                        </p>
+                        {# <a href="{{ path('vueVille', {'id': ville.id, 'slug': ville.slug}) }}" class="btn btn-primary"> Voir détail </a> #}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+</div>
+{% endblock %}
