@@ -35,7 +35,7 @@ class Departement
     private $slug;
 
     /**
-     * @ORM\OneToMany(targetEntity=Ville::class, mappedBy="departementId")
+     * @ORM\OneToMany(targetEntity=Ville::class, mappedBy="departementId", cascade={"remove"}, orphanRemoval=true)
      */
     private $villes;
 

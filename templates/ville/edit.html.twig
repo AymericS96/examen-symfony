@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Product!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    {{ form_start(form) }}
+
+    {{ form_row(form._token) }}
+
+    {{ form_label(form.name,'Nom ville') }}
+    {{ form_widget(form.name,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.postalCode,'Code postal') }}
+    {{ form_widget(form.postalCode,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.population,'Population') }}
+    {{ form_widget(form.population)}}
+
+    {{ form_label(form.image,'Image') }}
+    {{ form_widget(form.image,{'attr':{'maxlength':'255'}}) }}
+
+    {{ form_label(form.slug,'Slug') }}
+    {{ form_widget(form.slug,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.departement,'Département') }}
+    {{ form_widget(form.departement,{'attr':{'maxlength':'50'}}) }}
+
+    {{ form_label(form.save,'Mettre à jour la ville') }}
+    {{ form_widget(form.save) }}
+
+    {{ form_end(form, {'render_rest': false}) }}
+    
+</div>
+
+{% endblock %}

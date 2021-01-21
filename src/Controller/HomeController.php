@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
+     * Affiche la liste des villes
      * @Route("/", name="index")
      */
     public function index(VilleRepository $repo): Response
@@ -21,6 +22,7 @@ class HomeController extends AbstractController
     }
 
     /**
+     * Affiche le détail d'une ville
      * @Route("/ville/{id}-{slug}", name="detailVille")
      *
      * @param Ville $ville
@@ -28,6 +30,9 @@ class HomeController extends AbstractController
      */
     public function detailVille(Ville $ville): Response
     {
-        
+        $departementVille= $ville->getDepartement()->getName();
+        // dd($departementVille);
+        return $this->render('ville/show.html.twig', 
+        ['ville' => $ville, 'departementVille' => $departementVille]);
     }
 }

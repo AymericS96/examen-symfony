@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des villes {% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+    <table class="table">
+        <tr>
+            <th>Nom</th>
+            <th>Code postal</th>
+            <th>Population</th>
+            <th>Editer</th>
+            <th>Effacer</th>
+        </tr>
+        {% for ville in listeVilles %}
+        <tr>
+            <td>
+            <a href="{{ path('detailVille', {'id':ville.id, 'slug':ville.slug}) }}"> 
+                {{ ville.name }}
+            </a> 
+            </td>
+            <td>{{ ville.postalCode }}</td>
+            <td>{{ ville.population }}</td>
+            <td><a href="{{path('admin_editVille',{'id':ville.id})}}">
+                    Editer Produit</a>
+            </td>
+            <td><a href="{{path('admin_deleteVille',{'id':ville.id})}}">
+                    Supprimer Produit</a>
+            </td>
+
+        </tr>
+
+        <br>
+
+        {% endfor %}
+    </table>
+
+
+</div>
+{% endblock %}

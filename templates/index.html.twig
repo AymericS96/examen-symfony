@@ -17,7 +17,10 @@
                             CP {{ville.postalCode}} <br/>
                             Population: {{ville.population}}
                         </p>
-                        {# <a href="{{ path('vueVille', {'id': ville.id, 'slug': ville.slug}) }}" class="btn btn-primary"> Voir détail </a> #}
+                        <a 
+                        href="{{ path('detailVille', {'id': ville.id, 'slug': ville.slug}) }}" class="btn btn-primary"> 
+                        Voir détail 
+                        </a>
                     </div>
                 </div>
             </div>
