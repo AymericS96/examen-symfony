@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Utilisateurs {% endblock %}
+
+{% block body %} 
+
+{% if app.user %}
+    <table class="table">
+        <tr>
+            <th>Utilisateur</th>
+            <th>Rôle</th>
+            <th>Edition</th>
+        </tr>
+        {% for user in users %}
+            <tr>
+                <td>{{user.email}}</td>
+                <td>{{user.roles[0]}}</td>
+                <td> 
+                <a href="{{ path("users_editUser", {'id': user.id}) }}">Editer</a> 
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+{% endblock %}

@@ -11,24 +11,24 @@
 
 		{% if app.user %}
 			<li class="nav-item active">
-				{# <a class="nav-link active" href="{{ path('admin_category') }}">Liste départements
-				</a> #}
+				<a class="nav-link active" href="{{ path('admin_departementList') }}">Liste départements
+				</a>
 			</li>
 		{% endif %}
 
 			{% if is_granted('ROLE_STAFF') %}
 
-			{# <li class="nav-item">
-				<a class="nav-link" href="{{path('admin_ajoutProduit')}}">Ajout Ville</a>
+			<li class="nav-item">
+				<a class="nav-link" href="{{path('admin_addVille')}}">Ajout Ville</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="{{path('admin_ajoutCategorie')}}">Ajout Département</a>
-			</li> #}
+				<a class="nav-link" href="{{path('admin_addDepartement')}}">Ajout Département</a>
+			</li>
 
 			{% endif %}
 		</ul>
 	</div>
-        {# {% if app.user %}
+        {% if app.user %}
         <div class="d-flex">
             <button class="btn btn-outline-warning my-2 my-sm-0"> {{ app.user.email }}</button>
             <button class="btn btn-outline-danger" type="submit"> <a href="{{ path('app_logout') }}"> Déconnexion </a></button>
@@ -39,5 +39,5 @@
         <div class="d-flex">
             <button class="btn btn-outline-info" type="submit"> <a href=" {{ path('app_login') }} "> Connexion </a></button>
         </div>
-        {% endif %} #}
+        {% endif %}
 </nav>
